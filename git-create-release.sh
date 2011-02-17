@@ -1,14 +1,15 @@
 #!/bin/bash
 # Create Project Release with Git
 
-read -p "What is your project's nid on drupal.org? " CPR_NID
-read -p "What was the tag for your previous release? " CPR_OLD
-read -p "What tag should this release be? " CPR_NEW
-read -p "Where is git-release-notes.php? " CPR_GRN
 if [ ! -d ".git" ]; then
 echo "Not a repo."
 exit 1
 fi;
+
+read -p "What is your project's nid on drupal.org? " CPR_NID
+read -p "What was the tag for your previous release? " CPR_OLD
+read -p "What tag should this release be? " CPR_NEW
+read -p "Where is git-release-notes.php? " CPR_GRN
 
 echo -n "Creating tag... "
 git tag $CPR_NEW
